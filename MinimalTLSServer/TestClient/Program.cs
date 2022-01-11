@@ -5,8 +5,9 @@ const string CertificateFilePath = "server.crt";
 var certificate = new X509Certificate2(CertificateFilePath);
 
 var handler = new HttpClientHandler();
-handler.ClientCertificateOptions = ClientCertificateOption.Manual;
-handler.ClientCertificates.Add(certificate);
+//handler.ClientCertificateOptions = ClientCertificateOption.Manual;
+//handler.ClientCertificates.Add(certificate);
+handler.ServerCertificateCustomValidationCallback = delegate { return true; };
 
 using var client = new HttpClient(handler);
 
