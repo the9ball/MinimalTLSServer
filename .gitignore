@@ -293,3 +293,8 @@ __pycache__/
 
 *.apk
 *.symbols.zip
+
+
+/*.crt
+/*.csr
+/*.key
